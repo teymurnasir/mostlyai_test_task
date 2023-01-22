@@ -1,6 +1,18 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+
+  reporter: 'cypress-mochawesome-reporter',
+
+  reporterOptions: {
+    reportDir: "cypress/reports",
+    charts : true,
+    reportPageTitle: "MostlyAI report",
+    embeddedScreenshots: true,
+    inlineAssets: true
+  },
+
+  video: false,
   e2e: {
       baseUrl: "https://demoqa.com/automation-practice-form",
       defaultCommandTimeout: 60000,
@@ -15,7 +27,8 @@ module.exports = defineConfig({
       video: false,
 
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      require('cypress-mochawesome-reporter/plugin')(on);
     },
+    
   },
 });

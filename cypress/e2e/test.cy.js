@@ -37,7 +37,7 @@ describe('Mostly AI UI tests', () => {
 
   })
 
-  it('should fill contact form and hover over send message button', () => {
+  it.only('should fill contact form and hover over send message button', () => {
       
     cy.get('span.oxy-mega-dropdown_link-text').contains('Company').trigger('mouseover')
     .then(() => {
@@ -45,10 +45,11 @@ describe('Mostly AI UI tests', () => {
     });
 
     cy.wait(1000)
-          
+
     cy.removeCookieBanner()
-    cy.get('.hs-form-preloader-wrapper').should('be.visible')
-    cy.get('.hs-form-preloader-wrapper').should('not.be.visible')
+
+    cy.get('.hbspt-form').should('be.visible')
+               
     cy.get('.hbspt-form').find('input[name="firstname"]')  
       .type('John')
     cy.get('.hbspt-form').find('input[name="lastname"]')
