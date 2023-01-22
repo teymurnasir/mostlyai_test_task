@@ -37,7 +37,7 @@ describe('Mostly AI UI tests', () => {
 
   })
 
-  it.only('should fill contact form and hover over send message button', () => {
+  it('should fill contact form and hover over send message button', () => {
       
     cy.get('span.oxy-mega-dropdown_link-text').contains('Company').trigger('mouseover')
     .then(() => {
