@@ -1,6 +1,3 @@
-
-// 4) make it dynamic 
-
 describe('Mostly AI UI tests', () => {
 
   beforeEach(() => {
@@ -71,11 +68,5 @@ describe('Mostly AI UI tests', () => {
     cy.get('.hs_submit').find('input')
       .trigger('onmouseover');
   })
-
-
-
-
-
-
 
 })
